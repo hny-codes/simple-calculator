@@ -64,6 +64,10 @@ body {
     margin: 0.5rem;
 }
 
+.key:hover {
+    filter: brightness(2);
+}
+
 .op {
     background-color: rgb(40, 60, 20);
 }
