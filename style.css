@@ -48,12 +48,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-        "num num num op"
-        "num num num op"
-        "num num num op"
-        "num num . op"
-    ;
 }
 
 .key {
