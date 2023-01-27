@@ -14,6 +14,26 @@ const multiply = (a, b) => {
 };
 
 // Division operation
-const division = (a, b) => {
+const divide = (a, b) => {
   return b === 0 ? "Math error" : a / b;
+};
+
+// Choose operation
+const operation = (op, a, b) => {
+  switch (op) {
+    case "+":
+      return add(a, b);
+      break;
+    case "-":
+      return subtract(a, b);
+      break;
+    case "*":
+      return multiply(a, b);
+      break;
+    case "/":
+      return divide(a, b);
+      break;
+    default:
+      return "Math error";
+  }
 };
