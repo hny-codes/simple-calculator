@@ -31,36 +31,36 @@ const operation = (op, a, b) => {
   switch (op) {
     case "+":
       return add(a, b);
-      break;
     case "-":
       return subtract(a, b);
-      break;
     case "X":
       return multiply(a, b);
-      break;
     case "/":
       return divide(a, b);
-      break;
     default:
       return "Math error";
   }
 };
 
-// Full operation
-const performCalculation = () => {};
+// Clear function
+const clearAll = () => {
+  op = "";
+  firstNumber = 0;
+  secondNumber = 0;
+  currentDisplay = 0;
+  totalDisplay = "";
+};
 
 // Add event listeners to display key contents when clicked
 const addKeys = () => {
-  const test = document.querySelector("#equal");
-  console.log(test.classList.contains("op"));
-
   const keys = document.querySelectorAll(".key");
-  console.log(keys);
+
+  // Iterate each key
   keys.forEach((key) => {
+    // Operation key
     if (key.classList.contains("op")) {
       key.addEventListener("click", () => {
         if (firstNumber != 0) {
-          console.log(true);
           secondNumber = document.querySelector(".current-display").textContent;
           let results = operation(
             op,
@@ -72,7 +72,6 @@ const addKeys = () => {
           totalDisplay = firstNumber + op;
           currentDisplay = "";
           document.querySelector(".total-display").textContent = totalDisplay;
-
         } else {
           op = key.children[0].textContent;
           firstNumber = currentDisplay;
@@ -81,29 +80,27 @@ const addKeys = () => {
           document.querySelector(".total-display").textContent = totalDisplay;
         }
       });
-    } else if (key.classList.contains("clear")) {
+    }
+    // Clear key
+    else if (key.classList.contains("clear")) {
       key.addEventListener("click", () => {
-        op = "";
-        firstNumber = 0;
-        secondNumber = 0;
-        currentDisplay = 0;
-        totalDisplay = "";
+        clearAll();
         document.querySelector(".total-display").textContent = totalDisplay;
         document.querySelector(".current-display").textContent = currentDisplay;
       });
-    } else if (key.classList.contains("equal")) {
+    }
+    // Equals key
+    else if (key.classList.contains("equal")) {
       key.addEventListener("click", () => {
         secondNumber = document.querySelector(".current-display").textContent;
         let results = operation(op, Number(firstNumber), Number(secondNumber));
         document.querySelector(".current-display").textContent = results;
-        op = "";
-        firstNumber = 0;
-        secondNumber = 0;
-        currentDisplay = 0;
-        totalDisplay = "";
+        clearAll();
         document.querySelector(".total-display").textContent = totalDisplay;
       });
-    } else {
+    }
+    // Numbers key
+    else {
       key.addEventListener("click", () => {
         if (currentDisplay == 0) {
           currentDisplay = "";
