@@ -7,6 +7,8 @@
 body {
     background: rgb(29, 29, 29);
     color: rgb(204, 213, 220);
+    font-family: "Aclonica";
+    font-size: 1.2rem;
 }
 
 .container {
@@ -42,6 +44,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+    overflow: hidden;
 }
 
 .key-container {
@@ -61,6 +64,10 @@ body {
 
 .key:hover {
     filter: brightness(2);
+}
+
+.key:active {
+    filter: brightness(1.3);
 }
 
 .op {
