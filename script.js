@@ -106,7 +106,6 @@ const addKeys = () => {
           currentDisplay = "";
         }
         currentDisplay += key.children[0].textContent;
-        console.log(currentDisplay);
         document.querySelector(".current-display").textContent = currentDisplay;
       });
     }
