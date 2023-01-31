@@ -8,7 +8,7 @@ body {
     background: rgb(29, 29, 29);
     color: rgb(204, 213, 220);
     font-family: "Aclonica";
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .container {
@@ -45,6 +45,8 @@ body {
     justify-content: flex-end;
     align-items: flex-end;
     overflow: hidden;
+
+    font-size: 0.8rem;
 }
 
 .key-container {
